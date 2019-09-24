@@ -1,0 +1,16 @@
+{
+  "name": "algorithms-javascript",
+  "version": "1.0.0",
+  "description": "Many differents algorithms ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "Guilherme Paixão <guiferpa@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
+  "dependencies": {}
+}
