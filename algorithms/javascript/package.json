@@ -1,7 +1,7 @@
 {
   "name": "algorithms-javascript",
   "version": "1.0.0",
-  "description": "Many differents algorithms ",
+  "description": "Many differents algorithms",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage"
