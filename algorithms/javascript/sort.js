@@ -100,6 +100,7 @@ const merge = (items, initial, length) => {
   if (!Array.isArray(items)) {
     throw "Parameter isn't an array"
   }
+
   if (!Number.isInteger(initial) || !Number.isInteger(length)) {
     throw "Parameter isn't an integer"
   }
@@ -109,16 +110,53 @@ const merge = (items, initial, length) => {
   const middle = Math.floor((length - initial) / 2);
   const firstSlice = items.slice(initial, middle);
   const secondSlice = items.slice(middle, length);
-  const _items = [
+
+  return interpolate([
     ...merge(firstSlice, 0, firstSlice.length), 
     ...merge(secondSlice, 0, secondSlice.length)
-  ];
-  return interpolate(_items, initial, middle, length);
+  ], initial, middle, length);
+}
+
+const partition = (items, initial, length) => {
+  if (!Array.isArray(items)) {
+    throw "Parameter isn't an array"
+  }
+
+  if (!Number.isInteger(initial) || !Number.isInteger(length)) {
+    throw "Parameter isn't an integer"
+  }
+
+  let amountLessThan = initial;
+  const pivotIndex = length - 1;
+  const pivotItem = items[pivotIndex];
+
+  for (let currentIndex = initial; currentIndex < pivotIndex; currentIndex++) {
+    const currentItem = items[currentIndex];
+    if (currentItem < pivotItem) {
+      items = items.replace(currentIndex, amountLessThan);
+      amountLessThan++;
+    }
+  }
+
+  items = items.replace(pivotIndex, amountLessThan);
+
+  return amountLessThan;
+}
+
+const quick = (items, initial, length) => {
+  const amount = length - initial;
+  if (amount > 1) {
+    const pivot = partition(items, initial, length);
+    quick(items, initial, pivot);
+    quick(items, pivot +1, length);
+  }
 }
 
 module.exports = {
   selection,
   insertion,
   interpolate,
-  merge
+  merge,
+  partition,
+  quick
 };

@@ -1,4 +1,11 @@
-const { selection, insertion, interpolate, merge } = require('./sort');
+const { 
+  selection, 
+  insertion, 
+  interpolate, 
+  merge,
+  partition,
+  quick
+} = require('./sort');
 
 describe('selection suite', () => {
   test('should be a function', () => {
@@ -110,11 +117,16 @@ describe('merge suite', () => {
   test('should be a function', () => {
     expect(typeof merge).toBe('function');
   });
+});
 
-  // test('should be a function', () => {
-  //   const items = [10, 1, 2, 7, 9, 8, 3, 0];
-  //   // const items = [4, 6, 3];
-  //   const itemsnew = merge(items, 0, items.length);
-  //   console.log(itemsnew)
-  // });
+describe('partition suite', () => {
+  test('should be a function', () => {
+    expect(typeof partition).toBe('function');
+  });
+});
+
+describe('quick suite', () => {
+  test('should be a function', () => {
+    expect(typeof quick).toBe('function');
+  });
 });
