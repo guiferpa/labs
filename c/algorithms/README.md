@@ -202,6 +202,7 @@ for (int i = 0; i < n; i++) {
 | 5      | n     | Pior   |
 
 > `Melhor caso` - f(n) = 2 **-->** `O(1)`
+
 > `Pior caso` - f(n) = 2n + 2 **-->** `O(n)`
 
 
