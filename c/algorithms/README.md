@@ -290,3 +290,60 @@ log n^2 + log log n | log n log (log n)^10
 ```
 
 Solucão: `f(n) > g(n) `
+
+2. f(n) = 3n^√n | g(n) = 2^√n log n
+
+```
+3n^√n | 2 log(2) n^√n
+3n^√n | (n^√n)^log n^2
+3n^√n | (n^√n)^1
+```
+
+Solucão: `f(n) = g(n) `
+
+**Verificando se a afirmaćão é verdadeira ou falsa**
+
+1. (n + m)^k = O(n^m)
+
+```
+(n + 3)^2 = n^2 + 9
+```
+
+Solućão: Verdadeiro
+
+2. 2^(n + 1) = O(2^n)
+
+```
+2^(n + 1) = 2^1 + 2^n
+```
+
+Solućão: Verdadeiro
+
+3. 2^2n = O(2^n)
+
+```
+Vamos assumir que **n = 2**
+
+2^2n = 2^n + 2^n = 8
+
+2^n = 4
+```
+
+Solućão: Falso
+
+4. √log n = O(log log n)
+
+`log log n < √log`
+
+Solućão: Falso
+
+5. n^log n = O(2^n)
+
+```
+Vamos assumir que **n = 4**
+
+4^3 = 4*4*4 = 64
+2^4 = 2*2*2*2 = 32
+```
+
+Solućão: Falso
