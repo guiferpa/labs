@@ -254,3 +254,10 @@ for (int i = 0; i < n; i++) {
 | 2     | 2  | 4   | 4   |
 | 3     | 4  | 16  | 16  |
 | 4     | 8  | 64  | 256 |
+
+
+## Notacões
+
+- **O (Big-oh)** - Símbolo do maior custo do algoritmo.
+- **Ω (Omega)** - Símbolo do menor custo do algoritmo. 
+- **θ (Theta)** - Média do custo do algoritmo.
