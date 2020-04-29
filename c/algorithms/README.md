@@ -258,6 +258,35 @@ for (int i = 0; i < n; i++) {
 
 ## Notacões
 
-- **O (Big-oh)** - Símbolo do maior custo do algoritmo.
-- **Ω (Omega)** - Símbolo do menor custo do algoritmo. 
-- **θ (Theta)** - Média do custo do algoritmo.
+**O (Big-oh)** - Símbolo do maior custo do algoritmo.
+> f(n) = 2n + 3 **-->** 2n + 3 <= 10n | n >= 1
+
+**Ω (Omega)** - Símbolo do menor custo do algoritmo. 
+> f(n) = 2n + 3 **-->** 2n + 3 >= log n
+
+**θ (Theta)** - Média do custo do algoritmo.
+> f(n) = 2n + 3 **-->** n <= 2n + 3 <= 5n
+
+------------------------------------------------------------
+
+## Regras sobre logaritmos
+
+- log ab = log a + log b
+- log a/b = log a - log b
+- log a^b = b log a
+- a^log c^b = b log c^a
+- a^b = n **-->** b = log(a) n
+
+**Comparando funcões**
+
+1. f(n) = n^2 log n | g(n) = n (log n)^10
+
+Vamos aplicar os logaritmos para facilitar a solucão do problema.
+
+```
+log[n^2 log n]      | log[n (log n)^10]
+log n^2 + log log n | log n log (log n)^10
+2 log n + log log n | log n + 10 log log n
+```
+
+Solucão: `f(n) > g(n) `
